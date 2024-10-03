@@ -6,11 +6,12 @@ authors = ["Yousinator <y.omusabeh@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-gym = "^0.26.2"
+python = "^3.8 || ^3.10"
 gym-super-mario-bros = "^7.4.0"
 nes-py = "^8.2.1"
-pytest = "^8.2.2"
+pytest = "^8.3.3"
+gym = "0.24.1"
+
 
 
 [build-system]
