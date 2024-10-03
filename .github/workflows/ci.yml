@@ -1,0 +1,62 @@
+name: CI - MarioMaster
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+  # jobs:
+  #   trigger-ai-pipeline:
+  #     runs-on: ubuntu-latest
+  #     steps:
+  #       - name: Checkout code
+  #         uses: actions/checkout@v2
+
+  #       - name: Trigger AI Pipeline
+  #         uses: peter-evans/workflow-dispatch@v1
+  #         with:
+  #           repository: Yousinator/MarioMaster
+  #           workflow: ai/.github/workflows/ci_ai.yml
+  #           ref: main
+
+  trigger-game-server-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Trigger Game Server Pipeline
+        uses: peter-evans/workflow-dispatch@v1
+        with:
+          repository: Yousinator/MarioMaster
+          workflow: game_server/.github/workflows/ci_game_server.yml
+          ref: main
+
+  # trigger-backend-pipeline:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Trigger Backend Pipeline
+  #       uses: peter-evans/workflow-dispatch@v1
+  #       with:
+  #         repository: Yousinator/MarioMaster
+  #         workflow: backend/.github/workflows/ci_backend.yml
+  #         ref: main
+
+  # trigger-ui-pipeline:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Trigger UI Pipeline
+  #       uses: peter-evans/workflow-dispatch@v1
+  #       with:
+  #         repository: Yousinator/MarioMaster
+  #         workflow: ui/.github/workflows/ci_ui.yml
+  #         ref: main
